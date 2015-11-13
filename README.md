@@ -18,7 +18,7 @@ modify again.
 - Documents  
 	- README.MD
 	- Shortcut(快捷键)  
-		- Android Studio  
-		- Eclipse  
+		- Android Studio shortcut.md（Android Studio快捷键） 
+		- Eclipse shortcut.md(Eclipse快捷键)
 	
 	
