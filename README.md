@@ -13,3 +13,12 @@ modify again.
 ###Android Studio快捷键###
 - Alt+Enter	自动修正代码
 - Ctrl+O	重写方法
+
+### 目录结构  
+- Documents  
+	- README.MD
+	- Shortcut(快捷键)  
+		- Android Studio  
+		- Eclipse  
+	
+	
