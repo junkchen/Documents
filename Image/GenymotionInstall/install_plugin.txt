@@ -1,0 +1,19 @@
+Android Studio
+
+To install Genymotion plugin for Android Studio:
+
+In Android Studio, go to File > Settings.
+Select Plugins and click Browse Repositories.
+Right-click on Genymotion and click Download and install.
+To see Genymotion plugin icon, display the toolbar by clicking View > Toolbar.
+
+
+
+
+Eclipse
+
+To install Genymotion plugin for Eclipse:
+
+In Eclipse, go to Help > Install new software and click Add.
+Fill in the fields with Genymotion name and http://plugins.genymotion.com/eclipse/ location.
+Under Genymobile, check Genymotion and Genymotion Eclipse Tools and follow the steps indicated by Eclipse.

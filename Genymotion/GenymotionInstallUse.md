@@ -1,0 +1,4 @@
+#Genymotion安装与使用
+Genymotion是一个Android模拟器，它包含了一整套与Android虚拟环境进行互动的传感器和功能。你可以使用Genymotion在你的开发、测试和演示中测试你的大部分Android应用程序。  
+
+Genymotion简单快速功能强大，插件支持Android Studio和Eclipse。
