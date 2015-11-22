@@ -1,4 +1,4 @@
-#Genymotion安装与使用
+#Genymotion安装与使用、Android Studio安装Genymotion插件
 
 Genymotion是一个Android模拟器，它包含了一整套与Android虚拟环境进行互动的传感器和功能。你可以使用Genymotion在你的开发、测试和演示中测试你的大部分Android应用程序。  
 
@@ -6,6 +6,7 @@ Genymotion简单快速功能强大，插件支持Android Studio和Eclipse，还�
 
 ###Genymotion下载与安装
 
+Genymotion官网：[https://www.genymotion.com](https://www.genymotion.com)  
 Genymotion官网下载地址：[https://www.genymotion.com/#!/download](https://www.genymotion.com/#!/download)  
 下载和使用都需要登录才可以，所以自己注册个账号吧！
   
