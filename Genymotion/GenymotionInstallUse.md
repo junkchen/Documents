@@ -12,7 +12,11 @@ Genymotion简单快速功能强大，插件支持Android Studio和Eclipse，还�
 
 Genymotion官网：[https://www.genymotion.com](https://www.genymotion.com)  
 Genymotion官方下载地址：[https://www.genymotion.com/#!/download](https://www.genymotion.com/#!/download)  
-下载和使用都需要登录才可以，所以自己注册个账号吧！
+下载和使用都需要登录才可以，所以自己注册个账号吧！  
+**注意**：注册时看下面图，土豪可以随便选！  
+![](https://github.com/junkchen/Documents/raw/master/Image/GenymotionInstall/22reg.png)  
+
+下载
   
 ![](https://raw.githubusercontent.com/junkchen/Documents/master/Image/GenymotionInstall/13.png)  
 
