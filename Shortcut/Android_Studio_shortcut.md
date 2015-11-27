@@ -1,5 +1,6 @@
-##Adnroid Studio 快捷键##
+#Adnroid Studio常用快捷键最全收集整理#
 
+##常用
 - Ctrl + Space 基本代码完成（任何类名、方法名或变量名）  
 - Ctrl + Shift + Space  智能完成代码（通过期望的类型过滤方法和变量）  
 - Ctrl + Shift + Enter  完成语句   
@@ -41,4 +42,18 @@
 - Ctrl + Alt + C 	提取常量
 - Ctrl + S    保存所有  
 
-以上快捷键，相信在大家日常工作中应该够用了，如果觉得不够，下面为大家奉上所有的Windows、Linux上Android Studio的默认快捷键，来自官方，让你用个够，个别翻译可能有误，望大家多多包含，知道请给我发邮件junkchen@vip.qq.com给我反馈让我予以更正，或加群365532949讨论。
+以上快捷键，相信在大家日常工作中应该够用了，如果觉得不够，下面为大家奉上所有的Windows、Linux上Android Studio的默认快捷键，来自官方，让你用个够，个别翻译可能有误，望大家多多包含，知道请给我发邮件**junkchen@vip.qq.com**给我反馈让我予以更正，或加群**365532949**讨论。  
+
+## 全部 
+![](https://raw.githubusercontent.com/junkchen/Documents/master/Image/Shortcut/as_shortcut_1.png)  
+
+![](https://raw.githubusercontent.com/junkchen/Documents/master/Image/Shortcut/as_shortcut_2.png)  
+
+![](https://raw.githubusercontent.com/junkchen/Documents/master/Image/Shortcut/as_shortcut_3.png)
+
+![](https://raw.githubusercontent.com/junkchen/Documents/master/Image/Shortcut/as_shortcut_4.png)  
+
+参考：  
+[https://www.jetbrains.com/idea/documentation/](https://www.jetbrains.com/idea/documentation/)  
+
+[Android Studio安装与使用图解教程](http://blog.csdn.net/kjunchen/article/details/49980931)
