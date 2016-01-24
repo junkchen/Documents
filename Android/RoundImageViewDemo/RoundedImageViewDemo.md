@@ -1,4 +1,5 @@
-# RoundedImageViewDemo #
+
+# 分分钟带你搞定Android开发圆形头像 #
 
 目前在应用开发中，矩形的头像基本没有了，大多是圆形或圆角矩形，本文简简单单轻轻松松帮你搞定圆形或圆角矩形的头像。  
 
@@ -11,7 +12,12 @@
 使用RoundedImageView有两种操作方法，实质都是添加库依赖。
 
 
-方法一： 在Android Studio中，可进入模块设置中添加库依赖。
+方法一： 在Android Studio中，可进入模块设置中添加库依赖。  
+进入Module结构设置添加库依赖（如下图）  
+![](https://raw.githubusercontent.com/junkchen/Documents/master/Android/RoundImageViewDemo/1.png)  
+
+输入RoundedImageView然后搜索添加。
+![](https://raw.githubusercontent.com/junkchen/Documents/master/Android/RoundImageViewDemo/2.png)
 
 
 方法二： 在Moudle的build.gradle中添加如下代码，添加完之后在Build中进行下Make Module操作（编译下Module），使自己添加的依赖生效。     
@@ -32,6 +38,11 @@
 
 添加了库依赖之后，我们就可以使用该控件了。  
 
+先看看效果：  
+![](https://raw.githubusercontent.com/junkchen/Documents/master/Android/RoundImageViewDemo/screenshot1.png)   
+
+![](https://raw.githubusercontent.com/junkchen/Documents/master/Android/RoundImageViewDemo/screenshot2.png)
+
 控件属性：  
 riv_border_width： 边框宽度  
 riv_border_color： 边框颜色  
@@ -40,7 +51,7 @@ riv_corner_radius： 圆角弧度
 riv_corner_radius_top_left：左上角弧度   
 riv_corner_radius_top_right： 右上角弧度  
 riv_corner_radius_bottom_left：左下角弧度  
-riv_corner_radius_bottom_right：右下角弧度 
+riv_corner_radius_bottom_right：右下角弧度  
 
 
 	<com.makeramen.roundedimageview.RoundedImageView
@@ -102,3 +113,5 @@ riv_corner_radius_bottom_right：右下角弧度
             app:riv_oval="true"
             app:riv_tile_mode="repeat" />
 
+
+如有问题欢迎加Q群： **365532949**
