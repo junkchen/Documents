@@ -67,7 +67,7 @@ Android要求所有的应用在被安装之前进行数字签名认证。Android
 2、在Generate Signed APK Wizard窗口，点击**Create new**去创建一个新的签名证书。如果已经有keystore可以直接进入第4步。  
  ![](https://raw.githubusercontent.com/junkchen/Documents/master/Android/SigningApp/2.png) 
 
-3、在**New Key Store**窗口中，提供相应的信息。如果你的密钥的有效期设置为25年，那么你的应用在有效期限内更新都必须使用同一个密钥。  
+3、在**New Key Store**窗口中，提供相应的信息。如果你的密钥的有效期设置为25年，那么你的应用在有效期限内更新都必须使用同一个密钥。(注：一个Key store中可以包含多个Key)  
 ![](https://raw.githubusercontent.com/junkchen/Documents/master/Android/SigningApp/3.png)  
 
 4、在**Generate Signed APK Wizard**窗口中，选择一个密钥库，一个密钥，输入密码，然后点击**Next**。  
