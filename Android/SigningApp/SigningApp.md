@@ -1,4 +1,6 @@
-# Signing Your Applications #
+# Android Studio签名打包应用 #
+
+可直接看看下面的**Android Studio中签名应用**  
 
 Android要求所有的应用在被安装之前进行数字签名认证。Android通过这个数字证书确定应用的作者，然这个证书并不需要特定机构的签字。Android一般使用自己签名的证书，开发者自己持有证书的密钥。  
 
@@ -59,12 +61,23 @@ Android要求所有的应用在被安装之前进行数字签名认证。Android
 
 ## Android Studio中签名应用 ##
 
-1、在菜单栏点击 **Build > Generate Signed APK**.  
+1、在菜单栏点击 **Build > Generate Signed APK**. 
+![](https://raw.githubusercontent.com/junkchen/Documents/master/Android/SigningApp/1.png) 
 
-2、在Generate Signed APK Wizard窗口，点击**Create new**去创建一个新的签名证书。如果已经有keystore可以直接进入第4步。  
+2、在Generate Signed APK Wizard窗口，点击**Create new**去创建一个新的签名证书。如果已经有keystore可以直接进入第4步。 
+![](https://raw.githubusercontent.com/junkchen/Documents/master/Android/SigningApp/2.png) 
 
-3、在**New Key Store**窗口中，提供相应的信息。如果你的密钥的有效期设置为25年，那么你的应用在有效期限内更新都必须使用同一个密钥。  
+3、在**New Key Store**窗口中，提供相应的信息。如果你的密钥的有效期设置为25年，那么你的应用在有效期限内更新都必须使用同一个密钥。
+![](https://raw.githubusercontent.com/junkchen/Documents/master/Android/SigningApp/3.png)  
 
 4、在**Generate Signed APK Wizard**窗口中，选择一个密钥库，一个密钥，输入密码，然后点击**Next**。  
+![](https://raw.githubusercontent.com/junkchen/Documents/master/Android/SigningApp/4.png)
 
-5、在这个窗口，选择一个签名应用的保存位置然后点击**Finish**。
+5、在这个窗口，选择一个签名应用的保存位置然后点击**Finish**。  
+![](https://raw.githubusercontent.com/junkchen/Documents/master/Android/SigningApp/5.png)  
+
+接下来稍等片刻Android Studio就会帮你打包好的。  
+![](https://raw.githubusercontent.com/junkchen/Documents/master/Android/SigningApp/6.png) 
+
+好了这就是签名打包的应用，赶快去个应用市场分发吧。 
+![](https://raw.githubusercontent.com/junkchen/Documents/master/Android/SigningApp/7.png)  
