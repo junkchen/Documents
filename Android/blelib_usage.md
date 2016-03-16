@@ -18,13 +18,13 @@ BleLib中的关键类：
 
 因此，在你项目Module中的build.gradle文件中添加库依赖即可，如下：  
 
-
 	dependencies {
 	    compile 'com.junkchen.blelib:blelib:1.0.4'
 	}
 
-
 只此一句即可使用BleLib库，方便吧，要的就是这效果。  
+使用Android Studio时按照如下方式添加依赖比较好,获取的是最新的版本,结果和上面是一样的，进入模块的库依赖设置，搜索blelib即可获取：  
+![](https://github.com/junkchen/Documents/raw/master/Android/img/as_lib_dependency.png)
 
 ###*第二步：绑定BleLib服务*
 
