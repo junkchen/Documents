@@ -37,19 +37,19 @@ json数据书写格式是：名称/值。名称写在前面，值写在后面，
 
 	{
 		"firstName":"Junk",
-		"lastNmae":"Junk",
+		"lastNmae":"Chen",
 		"sex":"male",
 		"age":23
 	}
 
-那么，如何取值呢？假设我们给这个对象取名personObj，personObj.firstName = JunkChen , personObj.age = 23 。  
+那么，如何取值呢？假设我们给这个对象取名personObj，personObj.firstName = Junk , personObj.age = 23 。  
 
 如果用xml表示，如：
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<person>
 		<firstName>Junk</firstName>
-		<lastName>Junk</lastName>
+		<lastName>Chen</lastName>
 		<sex>male</sex>
 		<sec>23</sex>
 	</person>
@@ -147,7 +147,7 @@ Cat类中设置字段名为name和sex。
 
 新建**Dog**类，如下：  
 **Dog.java**
-
+```
 	package me.jc.gson;
 	
 	public class Dog {
@@ -186,6 +186,7 @@ Cat类中设置字段名为name和sex。
 		}
 	
 	}
+```
 
 Dog类中同样设置字段名为name和sex。
 
@@ -193,84 +194,86 @@ Dog类中同样设置字段名为name和sex。
 新建**Person**类，如下：  
 **Person.java**
 
-	package me.jc.gson;
-	
-	import java.util.Arrays;
-	
-	public class Person {
-		private int id;
-		private String name;
-		private String sex;
-		private long[] phone;
-		private Cat cat;
-		private Object object;
-	
-		public Person() {
-		}
-	
-		public Person(int id, String name, String sex) {
-			super();
-			this.id = id;
-			this.name = name;
-			this.sex = sex;
-		}
-	
-		public int getId() {
-			return id;
-		}
-	
-		public void setId(int id) {
-			this.id = id;
-		}
-	
-		public String getName() {
-			return name;
-		}
-	
-		public void setName(String name) {
-			this.name = name;
-		}
-	
-		public String getSex() {
-			return sex;
-		}
-	
-		public void setSex(String sex) {
-			this.sex = sex;
-		}
-	
-		public long[] getPhone() {
-			return phone;
-		}
-	
-		public void setPhone(long[] phone) {
-			this.phone = phone;
-		}
-	
-		public Cat getCat() {
-			return cat;
-		}
-	
-		public void setCat(Cat cat) {
-			this.cat = cat;
-		}
-	
-		public Object getObject() {
-			return object;
-		}
-	
-		public void setObject(Object object) {
-			this.object = object;
-		}
-	
-		@Override
-		public String toString() {
-			return "Person [id=" + id + ", name=" + name + ", sex=" + sex
-					+ ", phone=" + Arrays.toString(phone) + ", cat=" + cat
-					+ ", object=" + object + "]";
-		}
-	
+```
+package me.jc.gson;
+
+import java.util.Arrays;
+
+public class Person {
+	private int id;
+	private String name;
+	private String sex;
+	private long[] phone;
+	private Cat cat;
+	private Object object;
+
+	public Person() {
 	}
+
+	public Person(int id, String name, String sex) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.sex = sex;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public long[] getPhone() {
+		return phone;
+	}
+
+	public void setPhone(long[] phone) {
+		this.phone = phone;
+	}
+
+	public Cat getCat() {
+		return cat;
+	}
+
+	public void setCat(Cat cat) {
+		this.cat = cat;
+	}
+
+	public Object getObject() {
+		return object;
+	}
+
+	public void setObject(Object object) {
+		this.object = object;
+	}
+
+	@Override
+	public String toString() {
+		return "Person [id=" + id + ", name=" + name + ", sex=" + sex
+				+ ", phone=" + Arrays.toString(phone) + ", cat=" + cat
+				+ ", object=" + object + "]";
+	}
+
+}  
+```
 
 Person类中设置字段名为id、name、sex、phone、cat、object，这个Person中包含了Cat对象，还有个Object对象，从而构成了一个相对复杂的对象。到目前为止，似乎好像跟Json没什么关系，那么接下来我们看看如何使用Gson解析Json数据。  
 
@@ -286,40 +289,43 @@ Person类中设置字段名为id、name、sex、phone、cat、object，这个Per
 
 **GsonTest.java**
 
-	package me.jc.gson;
-	
-	import com.google.gson.Gson;
-	
-	public class GsonTest {
-	
-		public static void main(String[] args) {
-			Gson gson = new Gson();//实例化Gson对象
-	
-			Person person = new Person(1, "JunkChen", "male");//实例化Person对象
-			person.setPhone(new long[] { 17802900000l, 17802900001l });
-			Cat cat = new Cat("wangwang", "female");//实例化Cat对象
-			Dog dog = new Dog();//实例化Dog对象
-			dog.setAge(20);
-			person.setCat(cat);
-			person.setObject(dog);
-			System.out.println(gson.toJson(person));//将Person对象转换成Json对象数据
-			System.out.println();
-	
-			String json = "{\"phone\":[17802900000, 17802900001],\"id\":1,\"cat\":{\"name\":\"wangwang\"},\"sex\":\"female\",\"name\":\"Junk\",\"object\":{\"name\":\"doggg\",\"age\":12}}";//Json格式的数据
-			Person fromJson = gson.fromJson(json, Person.class);//使用Gson将Json数据转换成Person对象
-			System.out.println(fromJson.toString());
-			System.out.println();
+```java
+package me.jc.gson;
 
-			System.out.println(gson.fromJson(gson.toJson(fromJson.getObject()), Dog.class));
-		}
+import com.google.gson.Gson;
+
+public class GsonTest {
+
+	public static void main(String[] args) {
+		Gson gson = new Gson();//实例化Gson对象
+
+		Person person = new Person(1, "JunkChen", "male");//实例化Person对象
+		person.setPhone(new long[] { 17802900000l, 17802900001l });
+		Cat cat = new Cat("wangwang", "female");//实例化Cat对象
+		Dog dog = new Dog();//实例化Dog对象
+		dog.setAge(20);
+		person.setCat(cat);
+		person.setObject(dog);
+		System.out.println(gson.toJson(person));//将Person对象转换成Json对象数据
+		System.out.println();
+
+		String json = "{\"phone\":[17802900000, 17802900001],\"id\":1,\"cat\":{\"name\":\"wangwang\"},\"sex\":\"female\",\"name\":\"Junk\",\"object\":{\"name\":\"doggg\",\"age\":12}}";//Json格式的数据
+		Person fromJson = gson.fromJson(json, Person.class);//使用Gson将Json数据转换成Person对象
+		System.out.println(fromJson.toString());
+		System.out.println();
+
+		System.out.println(gson.fromJson(gson.toJson(fromJson.getObject()), Dog.class));
 	}
+}  
+```
 
-运行结果如下图所示：    
+运行结果如下图所示：  
+    
 ![](https://github.com/junkchen/Documents/raw/master/Android/GsonParseJson/ec20160322164435.png)
 
 OK，如果你之前是使用***JsonObject***和***JsonArray***进行Json数据解析的，那么看了这个是不是觉得Json数据解析很简单呢。只要根据Json数据创建相应的Java Bean对象，然后使用Gson轻轻松松搞定Json数据解析。赶快去试试吧。  
 
-Json解析的工具类还有很多，除了谷歌Gson外，还有阿里的FastJson也很好用。使用方法大同小异，具体用哪个自己决定。  
+Json解析的工具类还有很多，除了谷歌Gson外，还有阿里的FastJson也很好用。使用方法大同小异，具体用哪个自己决定。 
 
 欢迎加qq群讨论：***365532949***  
 HomePage：**[http://junkchen.com ](http://junkchen.com )**
