@@ -34,18 +34,18 @@ json数据书写格式是：名称/值。名称写在前面，值写在后面，
 ###**Json数据示例**
 
 **Json对象**  
-
+```json
 	{
 		"firstName":"Junk",
 		"lastNmae":"Chen",
 		"sex":"male",
 		"age":23
 	}
-
+```
 那么，如何取值呢？假设我们给这个对象取名personObj，personObj.firstName = Junk , personObj.age = 23 。  
 
 如果用xml表示，如：
-
+```xml
 	<?xml version="1.0" encoding="utf-8"?>
 	<person>
 		<firstName>Junk</firstName>
@@ -53,19 +53,19 @@ json数据书写格式是：名称/值。名称写在前面，值写在后面，
 		<sex>male</sex>
 		<sec>23</sex>
 	</person>
-
+```
 使用xml描述就比Json显得臃肿，xml中都是标记对形式,数据量肯定比Json大。如果用Json数组表示那就更简单了（如下）。
 
 **Json数组**
-
+```json
 	[
 		"Junk","Chen","male",23
 	]
-
+```
 如果这个数组取名为personArray，则 personArray[0] = Junk, personArray[2] = male 。
 
 **复合结构**  
-
+```json
 	{
 		"person":["Junk","Chen","male",23],
 		"cat":
@@ -83,7 +83,7 @@ json数据书写格式是：名称/值。名称写在前面，值写在后面，
 			"cities":["西安","汉中","咸阳"]
 		}]
 	}  
-
+```json
 这个示例中，首先是一个Json对象，对象里面包含Json数组，Json数组里面又包含有Json对象，这样就构成了一个复杂结构的Json数据。
   
 
@@ -103,7 +103,7 @@ Gson 2.6.2 Jar包下载： [http://download.csdn.net/detail/kjunchen/9469938](ht
 
 新建**Cat**类,如下：  
 **Cat.java**
-
+```java
 	package me.jc.gson;
 	
 	public class Cat {
@@ -142,12 +142,12 @@ Gson 2.6.2 Jar包下载： [http://download.csdn.net/detail/kjunchen/9469938](ht
 		}
 	
 	}
-
+```
 Cat类中设置字段名为name和sex。
 
 新建**Dog**类，如下：  
 **Dog.java**
-```
+```java
 	package me.jc.gson;
 	
 	public class Dog {
@@ -194,7 +194,7 @@ Dog类中同样设置字段名为name和sex。
 新建**Person**类，如下：  
 **Person.java**
 
-```
+```java
 package me.jc.gson;
 
 import java.util.Arrays;
