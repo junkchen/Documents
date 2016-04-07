@@ -64,9 +64,9 @@ json数据书写格式是：名称/值。名称写在前面，值写在后面，
 **Json数组**
 
 ```json
-	[
-		"Junk","Chen","male",23
-	]
+[
+	"Junk","Chen","male",23
+]
 ```
 
 如果这个数组取名为personArray，则 personArray[0] = Junk, personArray[2] = male 。
@@ -79,7 +79,7 @@ json数据书写格式是：名称/值。名称写在前面，值写在后面，
 	{
 		"name":"Jon",
 		"age":3
-	}
+	},
 	"province":
 	[{
 		"name":"广东",
@@ -110,41 +110,7 @@ Gson 2.6.2 Jar包下载： [http://download.csdn.net/detail/kjunchen/9469938](ht
 ###2、创建Java Bean类
 
 新建**Cat**类,如下：  
-**Cat.java**
-```java
-package me.jc.gson;
-
-public class Cat {
-	private String name;
-	private String sex;
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getSex() {
-		return sex;
-	}
-
-	public void setSex(String sex) {
-		this.sex = sex;
-	}
-
-	public Cat(String name, String sex) {
-		super();
-		this.name = name;
-		this.sex = sex;
-	}
-
-	public Cat() {
-		super();
-	}
-
-
+**Cat.java**  
 ```java  
 package me.jc.gson;
 
@@ -178,14 +144,7 @@ public class Cat {
 		super();
 	}
 
-	@Override
-	public String toString() {
-		return "Cat [name=" + name + ", sex=" + sex + "]";
-	}
-
-}
 ```
-
 
 Cat类中设置字段名为name和sex。
 

@@ -22,6 +22,11 @@ SDK可以根据当前网络状况，自动判断使用本地引擎还是云端�
 
 注册百度账号，注册开发者信息，创建应用，可以得到 APP ID、 API Key、和 Secret Key，在开发过程中会使用这三个值进行授权，开通语音合成服务，若需要使用离线合成功能还需要申请离线授权。详细步骤请看[百度语音接入流程](http://yuyin.baidu.com/docs/detail/147) 。  
 
+![](https://github.com/junkchen/Documents/raw/master/Android/BdTtsDemo/3.png)  
+
+Key值查看
+![](https://github.com/junkchen/Documents/raw/master/Android/BdTtsDemo/2.png)  
+
 ## *2、下载资源* ##
 
 下载百度语音SDK，根据自己的需要下载，本样例下载的是***离在线融合语音合成SDK_Android版*** ， 地址： [http://yuyin.baidu.com/tts/download](http://yuyin.baidu.com/tts/download)  
@@ -34,7 +39,7 @@ SDK可以根据当前网络状况，自动判断使用本地引擎还是云端�
 将开发包中的 libs 目录整体拷贝到工程目录(Eclipse的用户)，libs 目录包括了jar包和各平台的 SO 库，开发者视应用需要可以进行删减。galaxy_lite.jar 是百度 Android 公共基础库，如果项目中还集成了其它百度 SDK，
 如 Push SDK，在打包过程中出现类似如下的错误信息：
 
-```
+```log  
 [2013-10-22  11:02:57  -  Dex  Loader]  Unable  to  execute  dex:  Multiple  dex  files  define 
 Lcom/baidu/android/common/logging/Configuration; 
 [2013-10-22  11:02:57  -  VoiceRecognitionDemo]  Conversion  to  Dalvik  format  failed:  Unable  to 
@@ -42,7 +47,9 @@ execute dex: Multiple dex files define Lcom/baidu/android/common/logging/Configu
 ```
 
 请将此 Jar 包移除。对于使用Android Studio的用户，应将libs目录中的jar包放在libs目录下，然后添加依赖; 而 .SO 库则应该放在jniLibs目录下, jniLibs目录与java、res在相同目录下。若没有相应的目录就自己创建。整个结构如下图：   
- 
+
+![](https://github.com/junkchen/Documents/raw/master/Android/BdTtsDemo/1.png)
+
 
 ### 3.2 添加语音合成资源文件 ###
 
@@ -68,30 +75,35 @@ execute dex: Multiple dex files define Lcom/baidu/android/common/logging/Configu
 ### 4、1 Tts初始化 ###
 
 ```java 
-//  获取 tts 实例 
+//获取 tts 实例 
 speechSynthesizer = SpeechSynthesizer.getInstance(); 
-//  设置 app 上下文（必需参数） 
+//设置 app 上下文（必需参数） 
 speechSynthesizer.setContext(Context); 
-//  设置 tts 监听器 
-speechSynthesizer.setSpeechSynthesizerListener(SpeechSynthesizerListener); 
-//  文本模型文件路径，文件的绝对路径  (离线引擎使用) 
+//设置 tts 监听器 
+speechSynthesizer.setSpeechSynthesizerListener(SpeechSynthesizerListener);
+ 
+//文本模型文件路径，文件的绝对路径  (离线引擎使用) 
 speechSynthesizer.setParam(SpeechSynthesizer.PARAM_TTS_TEXT_MODEL_FILE, 
 TEXT_MODEL_FILE_FULL_PATH_NAME); 
-//  声学模型文件路径，文件的绝对路径  (离线引擎使用) 
+
+//声学模型文件路径，文件的绝对路径  (离线引擎使用) 
 speechSynthesizer.setParam(SpeechSynthesizer.PARAM_TTS_SPEECH_MODEL_FILE, 
 SPEECH_MODEL_FILE_FULL_PATH_NAME); 
+
 //  本 地 授 权 文 件 路 径 , 如 未 设 置 将 使 用 默 认 路 径 . 设 置 临 时 授 权 文 件 路 径 ，
-LICENCE_FILE_NAME 请替换成临时授权文件的实际路径，仅在使用临时 license 文件时需要进行
-设置，如果在[应用管理]中开通了离线授权，不需要设置该参数，建议将该行代码删除（离线引擎） 
+//LICENCE_FILE_NAME 请替换成临时授权文件的实际路径，仅在使用临时 license 文件时需要进行设置，
+//如果在[应用管理]中开通了离线授权，不需要设置该参数，建议将该行代码删除（离线引擎） 
 speechSynthesizer.setParam(SpeechSynthesizer.PARAM_TTS_LICENCE_FILE, 
 LICENSE_FILE_FULL_PATH_NAME); 
-//  请替换为语音开发者平台上注册应用得到的 App ID (离线授权) 
+
+//请替换为语音开发者平台上注册应用得到的 App ID (离线授权) 
 speechSynthesizer.setAppId("your_app_id"); 
-//  请替换为语音开发者平台注册应用得到的 apikey 和 secretkey (在线授权) 
+//请替换为语音开发者平台注册应用得到的 apikey 和 secretkey (在线授权) 
 speechSynthesizer.setApiKey("your_api_key", "your_secret_key"); 
-//  授权检测接口 
+
+//授权检测接口 
 AuthInfo authInfo = speechSynthesizer.auth(TtsMode); 
-//  引擎初始化接口 
+//引擎初始化接口 
 speechSynthesizer.initTts(TtsMode);  
 ```    
 
@@ -148,7 +160,6 @@ Manifest文件: AndroidManifest.xml
 Layout布局文件: activity_main.xml  
 
 ```xml
-
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -178,7 +189,6 @@ Layout布局文件: activity_main.xml
 Java: MainActivity.java   
 
 ```java
-
 package com.junkchen.bdttsdemo;
 
 import android.os.Bundle;
@@ -259,20 +269,23 @@ public class MainActivity extends AppCompatActivity implements SpeechSynthesizer
         this.mSpeechSynthesizer.setContext(this);
         //设置语音合成状态监听
         this.mSpeechSynthesizer.setSpeechSynthesizerListener(this);
-        // 文本模型文件路径 (离线引擎使用)
+        //文本模型文件路径 (离线引擎使用)
         this.mSpeechSynthesizer.setParam(SpeechSynthesizer.PARAM_TTS_TEXT_MODEL_FILE, mSampleDirPath + "/"
                 + TEXT_MODEL_NAME);
-        // 声学模型文件路径 (离线引擎使用)
+        //声学模型文件路径 (离线引擎使用)
         this.mSpeechSynthesizer.setParam(SpeechSynthesizer.PARAM_TTS_SPEECH_MODEL_FILE, mSampleDirPath + "/"
                 + SPEECH_FEMALE_MODEL_NAME);
-        // 本地授权文件路径,如未设置将使用默认路径.设置临时授权文件路径，LICENCE_FILE_NAME请替换成临时授权文件的实际路径，仅在使用临时license文件时需要进行设置，如果在[应用管理]中开通了离线授权，不需要设置该参数，建议将该行代码删除（离线引擎）
+        //本地授权文件路径,如未设置将使用默认路径.设置临时授权文件路径，LICENCE_FILE_NAME请替换成临时授权文件的实际路径，
+		//仅在使用临时license文件时需要进行设置，如果在[应用管理]中开通了离线授权，
+		//不需要设置该参数，建议将该行代码删除（离线引擎）
         this.mSpeechSynthesizer.setParam(SpeechSynthesizer.PARAM_TTS_LICENCE_FILE, mSampleDirPath + "/"
                 + LICENSE_FILE_NAME);
-        // 请替换为语音开发者平台上注册应用得到的App ID (离线授权)
+        //请替换为语音开发者平台上注册应用得到的App ID (离线授权)
         this.mSpeechSynthesizer.setAppId(APP_ID);
         // 请替换为语音开发者平台注册应用得到的apikey和secretkey (在线授权)
         this.mSpeechSynthesizer.setApiKey(API_KEY, SECRET_KEY);
-        // 发音人（在线引擎），可用参数为0,1,2,3。。。（服务器端会动态增加，各值含义参考文档，以文档说明为准。0--普通女声，1--普通男声，2--特别男声，3--情感男声。。。）
+        //发音人（在线引擎），可用参数为0,1,2,3。。。
+		//（服务器端会动态增加，各值含义参考文档，以文档说明为准。0--普通女声，1--普通男声，2--特别男声，3--情感男声。。。）
         this.mSpeechSynthesizer.setParam(SpeechSynthesizer.PARAM_SPEAKER, "0");
         // 设置Mix模式的合成策略
         this.mSpeechSynthesizer.setParam(SpeechSynthesizer.PARAM_MIX_MODE, SpeechSynthesizer.MIX_MODE_DEFAULT);
@@ -400,6 +413,7 @@ public class MainActivity extends AppCompatActivity implements SpeechSynthesizer
         }
     }
 }
+
 ```
 
 以上就是主要部分的源码，大家可以自己去试试看,想要完整源码请加群找群主。  
