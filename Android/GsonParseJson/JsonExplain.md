@@ -111,6 +111,39 @@ Gson 2.6.2 Jar包下载： [http://download.csdn.net/detail/kjunchen/9469938](ht
 
 新建**Cat**类,如下：  
 **Cat.java**
+```java
+package me.jc.gson;
+
+public class Cat {
+	private String name;
+	private String sex;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public Cat(String name, String sex) {
+		super();
+		this.name = name;
+		this.sex = sex;
+	}
+
+	public Cat() {
+		super();
+	}
+
 
 ```java  
 package me.jc.gson;
@@ -152,6 +185,7 @@ public class Cat {
 
 }
 ```
+
 
 Cat类中设置字段名为name和sex。
 
