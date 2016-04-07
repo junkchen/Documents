@@ -20,11 +20,11 @@ SDK可以根据当前网络状况，自动判断使用本地引擎还是云端�
 
 ## *1、注册百度语音开发者平台* ##
 
-注册百度账号，注册开发者信息，创建应用，可以得到 APP ID、 API Key、和 Secret Key，在开发过程中会使用这三个值进行授权，开通语音合成服务，若需要使用离线合成功能还需要申请离线授权。详细步骤请看[百度语音接入流程](http://yuyin.baidu.com/docs/detail/147) 。  
+注册百度账号，注册开发者信息，创建应用，可以得到 APP ID、 API Key、和 Secret Key，在开发过程中会使用这三个值进行授权（**很关键**），开通语音合成服务，若需要使用离线合成功能还需要申请离线授权。详细步骤请看[百度语音接入流程](http://yuyin.baidu.com/docs/detail/147) 。  
 
 ![](https://github.com/junkchen/Documents/raw/master/Android/BdTtsDemo/3.png)  
 
-Key值查看
+Key值查看(很关键)    
 ![](https://github.com/junkchen/Documents/raw/master/Android/BdTtsDemo/2.png)  
 
 ## *2、下载资源* ##
@@ -46,7 +46,7 @@ Lcom/baidu/android/common/logging/Configuration;
 execute dex: Multiple dex files define Lcom/baidu/android/common/logging/Configuration; 
 ```
 
-请将此 Jar 包移除。对于使用Android Studio的用户，应将libs目录中的jar包放在libs目录下，然后添加依赖; 而 .SO 库则应该放在jniLibs目录下, jniLibs目录与java、res在相同目录下。若没有相应的目录就自己创建。整个结构如下图：   
+请将此 Jar 包移除。对于使用Android Studio的用户，应将libs目录中的jar包放在libs目录下，然后添加库依赖(**千万别忘记**)， 而 .SO 库则应该放在jniLibs目录下, jniLibs目录与java、res在相同目录下。若没有相应的目录就自己创建。整个结构如下图：   
 
 ![](https://github.com/junkchen/Documents/raw/master/Android/BdTtsDemo/1.png)
 
