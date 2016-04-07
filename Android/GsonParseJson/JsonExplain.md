@@ -25,7 +25,9 @@ json语法规则是：数据在键值对中，数据由逗号分隔，花括号�
 
 json数据书写格式是：名称/值。名称写在前面，值写在后面，都在双引号中，中间用冒号隔开。如
 	
-	"name":"JunkChen"
+```json
+"name":"JunkChen"
+```
 
 **json的值**可以是：***数字***(整数或浮点数)、 ***字符串***(在双引号中)、***逻辑值***(true或false)、 ***数组***(在方括号中)、 ***对象***(在花括号中)、 ***null*** 。  
 
@@ -34,55 +36,61 @@ json数据书写格式是：名称/值。名称写在前面，值写在后面，
 ###**Json数据示例**
 
 **Json对象**  
-
-	{
-		"firstName":"Junk",
-		"lastNmae":"Chen",
-		"sex":"male",
-		"age":23
-	}
+```json  
+{
+	"firstName":"Junk",
+	"lastNmae":"Chen",
+	"sex":"male",
+	"age":23
+}
+```
 
 那么，如何取值呢？假设我们给这个对象取名personObj，personObj.firstName = Junk , personObj.age = 23 。  
 
 如果用xml表示，如：
 
-	<?xml version="1.0" encoding="utf-8"?>
-	<person>
-		<firstName>Junk</firstName>
-		<lastName>Chen</lastName>
-		<sex>male</sex>
-		<sec>23</sex>
-	</person>
+```xml   
+<?xml version="1.0" encoding="utf-8"?>
+<person>
+	<firstName>Junk</firstName>
+	<lastName>Chen</lastName>
+	<sex>male</sex>
+	<sec>23</sex>
+</person>
+```
 
 使用xml描述就比Json显得臃肿，xml中都是标记对形式,数据量肯定比Json大。如果用Json数组表示那就更简单了（如下）。
 
 **Json数组**
 
+```json
 	[
 		"Junk","Chen","male",23
 	]
+```
 
 如果这个数组取名为personArray，则 personArray[0] = Junk, personArray[2] = male 。
 
 **复合结构**  
-
+```json  
+{
+	"person":["Junk","Chen","male",23],
+	"cat":
 	{
-		"person":["Junk","Chen","male",23],
-		"cat":
-		{
-			"name":"Jon",
-			"age":3
-		}
-		"province":
-		[{
-			"name":"广东",
-			"cities":["深圳","广州","珠海"]
-		},
-		{
-			"name":"陕西",
-			"cities":["西安","汉中","咸阳"]
-		}]
-	}  
+		"name":"Jon",
+		"age":3
+	}
+	"province":
+	[{
+		"name":"广东",
+		"cities":["深圳","广州","珠海"]
+	},
+	{
+		"name":"陕西",
+		"cities":["西安","汉中","咸阳"]
+	}]
+}
+```  
 
 这个示例中，首先是一个Json对象，对象里面包含Json数组，Json数组里面又包含有Json对象，这样就构成了一个复杂结构的Json数据。
   
@@ -104,88 +112,91 @@ Gson 2.6.2 Jar包下载： [http://download.csdn.net/detail/kjunchen/9469938](ht
 新建**Cat**类,如下：  
 **Cat.java**
 
-	package me.jc.gson;
-	
-	public class Cat {
-		private String name;
-		private String sex;
-	
-		public String getName() {
-			return name;
-		}
-	
-		public void setName(String name) {
-			this.name = name;
-		}
-	
-		public String getSex() {
-			return sex;
-		}
-	
-		public void setSex(String sex) {
-			this.sex = sex;
-		}
-	
-		public Cat(String name, String sex) {
-			super();
-			this.name = name;
-			this.sex = sex;
-		}
-	
-		public Cat() {
-			super();
-		}
-	
-		@Override
-		public String toString() {
-			return "Cat [name=" + name + ", sex=" + sex + "]";
-		}
-	
+```java  
+package me.jc.gson;
+
+public class Cat {
+	private String name;
+	private String sex;
+
+	public String getName() {
+		return name;
 	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public Cat(String name, String sex) {
+		super();
+		this.name = name;
+		this.sex = sex;
+	}
+
+	public Cat() {
+		super();
+	}
+
+	@Override
+	public String toString() {
+		return "Cat [name=" + name + ", sex=" + sex + "]";
+	}
+
+}
+```
 
 Cat类中设置字段名为name和sex。
 
 新建**Dog**类，如下：  
 **Dog.java**
-```
-	package me.jc.gson;
-	
-	public class Dog {
-		private String name;
-		private int age;
-	
-		public String getName() {
-			return name;
-		}
-	
-		public void setName(String name) {
-			this.name = name;
-		}
-	
-		public int getAge() {
-			return age;
-		}
-	
-		public void setAge(int age) {
-			this.age = age;
-		}
-	
-		public Dog(String name, int age) {
-			super();
-			this.name = name;
-			this.age = age;
-		}
-	
-		public Dog() {
-			super();
-		}
-	
-		@Override
-		public String toString() {
-			return "Dog [name=" + name + ", age=" + age + "]";
-		}
-	
+
+```java  
+package me.jc.gson;
+
+public class Dog {
+	private String name;
+	private int age;
+
+	public String getName() {
+		return name;
 	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public Dog(String name, int age) {
+		super();
+		this.name = name;
+		this.age = age;
+	}
+
+	public Dog() {
+		super();
+	}
+
+	@Override
+	public String toString() {
+		return "Dog [name=" + name + ", age=" + age + "]";
+	}
+
+}
 ```
 
 Dog类中同样设置字段名为name和sex。
@@ -194,7 +205,7 @@ Dog类中同样设置字段名为name和sex。
 新建**Person**类，如下：  
 **Person.java**
 
-```
+```java  
 package me.jc.gson;
 
 import java.util.Arrays;
@@ -289,7 +300,7 @@ Person类中设置字段名为id、name、sex、phone、cat、object，这个Per
 
 **GsonTest.java**
 
-```java
+```java  
 package me.jc.gson;
 
 import com.google.gson.Gson;
