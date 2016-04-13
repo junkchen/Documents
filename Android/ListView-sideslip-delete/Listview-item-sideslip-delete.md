@@ -3,15 +3,17 @@
 在最近的项目中，我的ListView中item选项是长按删除的效果（Android的通常做法长按或点击），老板觉得这个效果不好，提出要求做类似QQ消息列表横向滑动时删除消息的效果，这种效果确实感觉挺爽的，但是我也没做过，于是就在网上搜索了一番，找到了很多例子，实现了这个效果，但在这个过程中不尽如人意，遇到一些曲折，大多数例子确实实现了效果，但是也存在一些问题没有解决，用着有问题，如item点击无效、item有点击事件时滑动item结束后执行了item的点击事件、item中有按钮时若手指按下在按钮位置时滑动无效等等，自己查了很多终于解决了这些问题，现整理如下供大家参考，如有问题请多多包含。  
 
 本博文实现思路是在滑动item的过程中修改item的leftMargin实现的。先看下最终效果：  
-  
+
+<img src="sideslip-listview.gif" width="450"/>
 
 下面就一步步来实现吧。  
+
 
 ## **一、item的布局** ##
 
 ListView中的item布局有讲究，最外层使用的LinearLayout，设置其orientation属性为horizontal。然后里面主要包含两个视图组件，一个是我们正常显示时的布局，另外一个是滑动时出现的视图如删除按钮。正常显示的视图初始的layout_width设置为match_parent，并且滑动时出现的视图必须指定其layout_width，不要使用match_parent或wrap_parent，否则会获取不到宽度。稍后你会明白的。看本博文完整的item布局。   
 
-**本例完整的item布局文件item.xml**  
+### **本例完整的item布局文件item.xml**   ###
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -274,7 +276,7 @@ public float dp2px(int dp) {
 
 到此，我们的自定义ListView基本上就搞定了。最后贴上我的自定义SideslipListView的完整源码。  
 
-**完整的自定义 SideslipListView.java**
+### **完整的自定义 SideslipListView.java** ###
 
 ```java
 package com.junkchen.toucheventtest;
@@ -480,9 +482,9 @@ public class SideslipListView extends ListView {
 
 ## **三、自定义SideslipListView使用** ##
 
-在布局中使用。
+在布局中的使用。
 
-**本例完整的布局文件 activity_main.xml**  
+### ** 本例完整的布局文件 activity_main.xml ** ###  
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -510,7 +512,7 @@ public class SideslipListView extends ListView {
 </LinearLayout>
 ```
 
-**本例完整的Java文件 MainActivity.java ** 
+### ** 本例完整的Java文件 MainActivity.java **  ###
 
 ```java
 package com.junkchen.toucheventtest;
