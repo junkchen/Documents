@@ -484,7 +484,7 @@ public class SideslipListView extends ListView {
 
 在布局中的使用。
 
-### ** 本例完整的布局文件 activity_main.xml ** ###  
+### **本例完整的布局文件 activity_main.xml** ###
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -512,7 +512,7 @@ public class SideslipListView extends ListView {
 </LinearLayout>
 ```
 
-### ** 本例完整的Java文件 MainActivity.java **  ###
+### **本例完整的Java文件 MainActivity.java** ###
 
 ```java
 package com.junkchen.toucheventtest;
