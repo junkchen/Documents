@@ -4,7 +4,7 @@
 
 本博文实现思路是在滑动item的过程中修改item的leftMargin实现的。先看下最终效果：  
 
-<img src="sideslip-listview.gif" width="450"/>
+<img src="https://raw.githubusercontent.com/junkchen/Documents/master/Android/ListView-sideslip-delete/sideslip-listview.gif" width="450"/>
 
 下面就一步步来实现吧。  
 
