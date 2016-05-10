@@ -187,5 +187,5 @@ public void onRequestPermissionsResult(int requestCode,
 
 鄙人英语能力有限，翻译难免有误，请读者多多包含！  
 
-欢迎加QQ群交流： **365532949 **
+欢迎加QQ群交流： **365532949**  
 **Homepage:** [http://junkchen.com](http://junkchen.com)
