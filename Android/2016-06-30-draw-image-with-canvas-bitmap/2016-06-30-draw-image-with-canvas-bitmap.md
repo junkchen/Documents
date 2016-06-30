@@ -1,6 +1,10 @@
 # **Android使用Bitmap、Canvas制作图片** #
 
 先看下效果图：  
+  
+![](https://github.com/junkchen/Documents/raw/master/Android/2016-06-30-draw-image-with-canvas-bitmap/2016-06-30-190624.png) 
+
+![](https://github.com/junkchen/Documents/raw/master/Android/2016-06-30-draw-image-with-canvas-bitmap/2016-06-30-190953.png)
 
 在开发中有时候需要生成报告图，我们就可以使用Bitmap、Canvas进行文字图片的绘制，从而生成各种各样的图片或报告。看具体例子：  
 
@@ -42,6 +46,29 @@ public File drawImage() {
 ```xml
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 ```
+
+## **3、其他部分代码** ##
+
+```java
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+    ((ImageView) findViewById(R.id.imageView)).setImageURI(Uri.fromFile(drawImage()));
+}
+```
+
+```xml
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/imageView"
+    android:src="@mipmap/ic_launcher"
+    android:scaleType="centerInside"/>
+```
+
+自己写个小例子练练吧，挺实用的，呵呵。。。。
 
 欢迎加QQ群交流： **365532949**  
 **Homepage:** [http://junkchen.com](http://junkchen.com)
