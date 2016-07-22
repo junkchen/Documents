@@ -438,5 +438,5 @@ origin
 
 基本上学会以上命令完成日常的工作没问题了，少年，加油吧！！！  
 
-**欢迎加QQ群交流： 365532949**
+**欢迎加QQ群交流： 365532949**  
 **Homepage: [http://junkchen.com](http://junkchen.com)**  
