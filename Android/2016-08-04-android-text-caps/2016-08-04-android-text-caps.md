@@ -2,7 +2,7 @@
 
 在较新的 sdk 版本中，开发中我们会看到按钮的英文显示全为大写的。像下面这样：  
 
-图片展位  
+![](https://raw.githubusercontent.com/junkchen/Documents/master/Android/2016-08-04-android-text-caps/caps-true.png)  
 
 其布局代码为：  
 
@@ -38,7 +38,7 @@
 
 其显示结果为：  
 
-图片展位  
+![](https://raw.githubusercontent.com/junkchen/Documents/master/Android/2016-08-04-android-text-caps/caps-false.png)  
 
 可以看到 TextView 的 textAllCaps 属性设置为 true 后，无论设置的文本是大写还是小写，显示全部为大写， Button 的 textAllCaps 设置为 false 后，则根据设置的文本进行显示。  
 
