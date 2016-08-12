@@ -112,3 +112,47 @@ Random r = new Random(seedValue);
 
 seedValue是随机数生成的种子。  
 
+- public int nextInt()： 返回一个随机整数
+- public int nextInt(int n)： 返回大于等于0小于n的随机整数
+- public long nextLong()： 返回一个随机长整型数
+- public boolean nextBoolean()： 返回一个随机布尔型值
+- public float nextFloat()： 返回一个随机浮点型值
+- public double nextDouble()： 返回一个随机双精度浮点型数
+- public double nextGaussian()： 返回一个概率密度为高斯分布的双精度值
+
+实例代码：  
+
+```java
+public static void main(String[] args) {
+	//实例化一个Random类
+	Random r = new Random();
+	//随机产生一个整数
+	System.out.println("随机产生一个整数: " + r.nextInt());
+	//随机产生一个大于等于0小于10的整数
+	System.out.println("随机产生一个大于等于0小于10的整数: " + r.nextInt(10));
+	//随机产生一个布尔型的值
+	System.out.println("随机产生一个布尔型的值: " + r.nextBoolean());
+	//随机产生一个浮点型的值
+	System.out.println("随机产生一个浮点型的值: " + r.nextFloat());
+	//随机产生一个双精度型的值
+	System.out.println("随机产生一个双精度型的值: " + r.nextDouble());
+	//随机产生一个概率密度为高斯分布的双精度值
+	System.out.println("随机产生一个概率密度为高斯分布的双精度值: " + r.nextGaussian());
+}
+```
+
+运行结果如下：  
+
+```txt
+随机产生一个整数: 105798029
+随机产生一个大于等于0小于10的整数: 3
+随机产生一个布尔型的值: false
+随机产生一个浮点型的值: 0.20587307
+随机产生一个双精度型的值: 0.6920970515624921
+随机产生一个概率密度为高斯分布的双精度值: 0.5640177494983246
+```
+
+通过以上两者方式我们就可以轻松的产生我想要的随机数。  
+
+**欢迎加QQ群交流： 365532949**  
+**Homepage: [http://junkchen.com](http://junkchen.com)**  
