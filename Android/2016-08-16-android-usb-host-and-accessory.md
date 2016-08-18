@@ -6,7 +6,7 @@
 
 Android 支持多种 USB 外设和 Android USB 配件（硬件实现 Android 配件协议），通过两种模式： USB 配件和 USB 主机。在 USB 配件模式中，外部 USB 硬件担当 USB 主机。在 USB 主机模式中，Android 设备担当主机。这样的设备包括数码相机、键盘、鼠标和游戏控制器等。  
 
-图片位置
+![](https://raw.githubusercontent.com/junkchen/Documents/master/Android/img/android-usb-host-and-accessory/usb-host-accessory.png)
 
 USB 配件和主机模式在 Android 3.1（API 等级12） 或者更高的版本中支持。  
 
