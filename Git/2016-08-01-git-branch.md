@@ -347,5 +347,5 @@ To https://github.com/schacon/simplegit
 
 至此，你现在应该能自如地创建并切换至新分支、在不同分支之间切换以及合并本地分支，你现在应该也能通过推送你的分支至共享服务以分享它们、使用共享分支与他人协作。  
 
-**欢迎加QQ群交流： 365532949**  
+> **欢迎加QQ群交流： 365532949**  
 **Homepage: [http://junkchen.com](http://junkchen.com)**  
