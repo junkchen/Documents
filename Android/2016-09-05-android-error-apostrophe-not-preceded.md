@@ -29,3 +29,5 @@ Error:(117, 5) Apostrophe not preceded by \ (in What's the Bluetooth version?
 
 然后再次编译就顺利通过了。  
 
+> **欢迎加QQ群交流： 365532949**  
+**Homepage: [http://junkchen.com](http://junkchen.com)**  
