@@ -10,15 +10,15 @@ Lambda 表达式用在函数式接口中，函数式接口即只包含一个抽�
 
 现在假设有一个 Calculator 类，类中有一个函数式接口 IntegerMath 和一个 operateBinary() 方法，如下：   
 
-```.java
+```java
 
-	interface IntegerMath {
-		int operation(int a, int b);
-	}
+interface IntegerMath {
+	int operation(int a, int b);
+}
 
-	public int operateBinary(int a, int b, IntegerMath op) {
-		return op.operation(a, b);
-	}
+public int operateBinary(int a, int b, IntegerMath op) {
+	return op.operation(a, b);
+}
 
 ```
 
@@ -26,22 +26,22 @@ Lambda 表达式用在函数式接口中，函数式接口即只包含一个抽�
 
 **使用匿名类** 
 
-```.java
+```java
 
-	calculator.operateBinary(2, 3, new IntegerMath() {
-		@Override
-		public int operation(int a, int b) {
-			return a + b;
-		}
-	});
+calculator.operateBinary(2, 3, new IntegerMath() {
+	@Override
+	public int operation(int a, int b) {
+		return a + b;
+	}
+});
 
 ```
 
 **使用 Lambda 表达式**
 
-```.java
+```java
 
-	calculator.operateBinary(2, 3, (x, y) -> x + y);
+calculator.operateBinary(2, 3, (x, y) -> x + y);
 
 ```
 
@@ -67,7 +67,7 @@ Lambda 表达式由以下三部分组成：
 
 一个简单的示例：  
 
-```.java
+```java
 
 public class Calculator {
 
