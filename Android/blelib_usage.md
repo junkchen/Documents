@@ -12,9 +12,9 @@ BleLib中的关键类：
 - MultipleBleService类是可多个蓝牙设备同时连接的服务类
 
 
-##*使用方法*
+## *使用方法*
 
-###*第一步：添加BleLib库依赖*
+### *第一步：添加BleLib库依赖*
 
 因此，在你项目Module中的build.gradle文件中添加库依赖即可，如下：  
 
@@ -26,7 +26,7 @@ BleLib中的关键类：
 使用Android Studio时按照如下方式添加依赖比较好,获取的是最新的版本,结果和上面是一样的，进入模块的库依赖设置，搜索blelib即可获取：  
 ![](https://github.com/junkchen/Documents/raw/master/Android/img/as_lib_dependency.png)
 
-###*第二步：绑定BleLib服务*
+### *第二步：绑定BleLib服务*
 
 BleLib库中的Ble服务类继承了Service，因此建议绑定服务进行使用。  
   
@@ -68,7 +68,7 @@ BleLib库中的Ble服务类继承了Service，因此建议绑定服务进行使�
     }
 
 
-###*第三步：初始化操作*
+### *第三步：初始化操作*
 
 当服务绑定后可进行初始化操作，判断该机是否支持蓝牙，调用如下方法：  
 
@@ -77,7 +77,7 @@ BleLib库中的Ble服务类继承了Service，因此建议绑定服务进行使�
 该方法会返回一个boolean值，返回true表示初始化成功，支持蓝牙；返回false表示初始化操作失败，则后续的所有操作都不能进行。  
 
 
-###*第四步：打开蓝牙*  
+### *第四步：打开蓝牙*  
 
 当初始化操作成功后就可以打开蓝牙了，调用如下方法：
 
@@ -86,7 +86,7 @@ BleLib库中的Ble服务类继承了Service，因此建议绑定服务进行使�
 该方法需要传入一个boolean类型的参数，true表示打开蓝牙，false表示关闭蓝牙；并返回boolean参数，返回true表示蓝牙打开，否则关闭。  
 
 
-###*第五步：扫描Ble设备*
+### *第五步：扫描Ble设备*
 
 当蓝牙打开后可以进行Ble设备的扫描了，调用如下方法：
  
@@ -108,7 +108,7 @@ BleLib库中的Ble服务类继承了Service，因此建议绑定服务进行使�
 
 （***注意***：设置监听一定要等到BleService服务绑定之后才进行，否则会造成空指针异常） 
 
-####*广播接收扫描到的Ble设备*  
+#### *广播接收扫描到的Ble设备*  
 
 	private BroadcastReceiver bleReceiver = new BroadcastReceiver() {
         @Override
@@ -126,7 +126,7 @@ BleLib库中的Ble服务类继承了Service，因此建议绑定服务进行使�
 两种方式获取都可以，但是监听方式获取的信息会多一些，可根据自己的需求进行选择使用那种方式。   
  
 
-###*第六步：连接Ble服务*
+### *第六步：连接Ble服务*
 
 当扫描到Ble设备后就可以进行连接操作了，调用如下方法： 
 
@@ -137,7 +137,7 @@ BleLib库中的Ble服务类继承了Service，因此建议绑定服务进行使�
 
 连接状态可以从连接监听或者广播接收器两种方式获取，设置方法如下：  
 
-####*监听获取Ble连接状态*  
+#### *监听获取Ble连接状态*  
  
 	//Ble连接回调
 	mBleService.setOnConnectListener(new BleService.OnConnectListener() {
@@ -155,7 +155,7 @@ BleLib库中的Ble服务类继承了Service，因此建议绑定服务进行使�
 	    }
 	}); 
 
-####*广播接收Ble连接状态* 
+#### *广播接收Ble连接状态* 
 
 	private BroadcastReceiver bleReceiver = new BroadcastReceiver() {
         @Override
@@ -178,7 +178,7 @@ BleLib库中的Ble服务类继承了Service，因此建议绑定服务进行使�
 	    }
 	});
 
-###*第七步：读写Ble特性和接收GATT通知*
+### *第七步：读写Ble特性和接收GATT通知*
 
 连接上Ble并获取服务之后就可以对特性进行读写，设置GATT通知，操作如下：
  
@@ -202,7 +202,7 @@ BleLib库中的Ble服务类继承了Service，因此建议绑定服务进行使�
 	});
 	
 	
-##*总结*	
+## *总结*	
 	
 最后小小总结下使用BleLib库进行Android低功耗蓝牙Ble的开发步骤：  
 
@@ -215,7 +215,7 @@ BleLib库中的Ble服务类继承了Service，因此建议绑定服务进行使�
 7. 读写Ble特性和接收GATT通知
 
 
-##*Author*
+## *Author*
  
 - **Name**： Junk Chen  
 - **Blog**： https://github.com/junkchen
