@@ -32,7 +32,7 @@
 
 ## **类图** ##
 
-<img src="../iterator-pattern.png">
+<img src="./iterator-pattern.png">
 
 ## **实现** ##
 
