@@ -1,6 +1,6 @@
 # Android TextInputLayout，打造 Material Design 风格的文本输入框
 
-<video src="./img/mio-design_assets_textfields-anatomy-label-text-do.mp4" width=480 controls="controls" loop="loop" autoplay="autoplay" />
+<img src="./img/mio-design_assets_textfields-anatomy-label-text-do.gif" width=480 />
 
 Android Material Design 对 EditText 输入框的交互设计定义了一个规范，设计细节可参考官网介绍： [MATERIAL DESIGN GUIDELINES: TEXT FIELDS](https://material.io/design/components/text-fields.html) 。**TextInputLayout** 提供了一种 Material 风格的文本输入框的实现。  
 
